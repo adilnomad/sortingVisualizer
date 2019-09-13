@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   
-    var list = new Array(40);
+    var list = new Array(60);
     for (var i = 0; i < list.length; i++) {
       var height = Math.floor((Math.random() * 300) + 10);
       list[i] = {
@@ -18,7 +18,7 @@ class App extends React.Component {
     }
     this.state = {
       array : list,
-      algorithm : "Selection Sort",
+      algorithm : "Insertion Sort",
       speed: 1,
       size: 40,
       msStart : null,
@@ -210,15 +210,17 @@ class App extends React.Component {
   }
 
   generate() {
-    var listCopy = new Array(this.state.size);
-    for (var i = 0; i < listCopy.length; i++) {
-      var height = Math.floor((Math.random() * 300) + 20);
-      listCopy[i] = {
-        p : [20 * i, height, 20 * i, 0],
-        color : "blue"
-      };
+    if (!this.state.running) {
+      var listCopy = new Array(60);
+      for (var i = 0; i < listCopy.length; i++) {
+        var height = Math.floor((Math.random() * 300) + 20);
+        listCopy[i] = {
+          p : [20 * i, height, 20 * i, 0],
+          color : "blue"
+        };
+      }
+      this.setState({array : listCopy});
     }
-    this.setState({array : listCopy});
   }
 
   render() {
@@ -226,17 +228,17 @@ class App extends React.Component {
     <div>
       <NavBar ss={this.selectionSort} start={this.start} algorithm={this.state.algorithm} generate={this.generate} 
       qs={this.quickSort} speed={this.speed} is={this.insertionSort} running={this.state.running} />
-      <Stage className="stage" width={1100} height={500}>
+      <Stage className="stage" width={1200} height={500}>
       <Layer>
         {this.state.array.map((unit, index) => (
           <Line className="unit"
           key={index}
-          x={120}
-          y={100}
-          points={[25 * index, unit.p[1], 25 * index, 0]}
+          x={160}
+          y={80}
+          points={[15 * index, unit.p[1], 15 * index, 0]}
           stroke={unit.color}
-          strokeWidth={5}
-          shadowBlur={10}
+          strokeWidth={12}
+          shadowBlur={5}
           shadowColor="black"
         />
         ))}
