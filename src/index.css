@@ -1,13 +1,83 @@
+
 body {
+  background: #E3E5E2;
+  height: 99%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.bar {
+  position: relative;
+  background: #6A6FAF;
+  margin-top: -20px;
+  margin-left: -8px;
+  width: 101%;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  box-shadow: 0px 0px 10px black;
+}
+
+.navigation {
+  position: relative;
+  margin-left: 2%;
+  color: white;
+  font-size: 20px;
+}
+
+.unit {
+  box-shadow: 0px 0px 50px black;
+}
+
+.title {
+  position: relative;
+  margin-left: 2%;
+  color: white;
+}
+
+.stage {
+  position: relative;
+}
+
+.bts {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 2%;
+  margin-right: 15%;
+  background: green;
+  border: 2px;
+  border-color: blue;
+  font-size: 14px;
+  color: azure;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
+.bts:hover {
+  box-shadow: 0px 0px 3px azure;
+}
+
+.bt {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 2%;
+  margin-right: 2%;
+  background: blue;
+  font-size: 14px;
+  color: azure;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  transition: 0.1s;
+  
+}
+
+.bt:hover {
+  box-shadow: 0px 0px 3px azure;
 }
