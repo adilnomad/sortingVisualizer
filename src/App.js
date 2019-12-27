@@ -228,22 +228,24 @@ class App extends React.Component {
     <div>
       <NavBar ss={this.selectionSort} start={this.start} algorithm={this.state.algorithm} generate={this.generate} 
       qs={this.quickSort} speed={this.speed} is={this.insertionSort} running={this.state.running} />
-      <Stage className="stage" width={window.innerWidth - 150} height={window.innerHeight - 150}>
-      <Layer>
-        {this.state.array.map((unit, index) => (
-          <Line className="unit"
-          key={index}
-          x={160}
-          y={80}
-          points={[15 * index, unit.p[1] + 50, 15 * index, 0]}
-          stroke={unit.color}
-          strokeWidth={12}
-          shadowBlur={5}
-          shadowColor="black"
-        />
-        ))}
-      </Layer>
-      </Stage> 
+      <div className="center">
+        <Stage className="stage" width={window.innerWidth - 150} height={window.innerHeight - 150}>
+        <Layer>
+          {this.state.array.map((unit, index) => (
+            <Line className="unit"
+            key={index}
+            x={160}
+            y={80}
+            points={[15 * index, unit.p[1] + 50, 15 * index, 0]}
+            stroke={unit.color}
+            strokeWidth={12}
+            shadowBlur={5}
+            shadowColor="black"
+          />
+          ))}
+        </Layer>
+        </Stage> 
+      </div>
     </div>);
   }
 }
