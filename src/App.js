@@ -13,8 +13,7 @@ class App extends React.Component {
       var height = Math.floor((Math.random() * 300) + 10);
       list[i] = {
         p : [i, height, i, 0],
-        color : "blue",
-        nnn : 'gas'
+        color : "blue"
       };
     }
     this.state = {
@@ -214,7 +213,7 @@ class App extends React.Component {
     if (!this.state.running) {
       var listCopy = new Array(60);
       for (var i = 0; i < listCopy.length; i++) {
-        var height = Math.floor((Math.random() * 300) + 20);
+        var height = Math.floor((Math.random() * 300) + 1);
         listCopy[i] = {
           p : [20 * i, height, 20 * i, 0],
           color : "blue"
@@ -229,14 +228,14 @@ class App extends React.Component {
     <div>
       <NavBar ss={this.selectionSort} start={this.start} algorithm={this.state.algorithm} generate={this.generate} 
       qs={this.quickSort} speed={this.speed} is={this.insertionSort} running={this.state.running} />
-      <Stage className="stage" width={1200} height={500}>
+      <Stage className="stage" width={window.innerWidth - 150} height={window.innerHeight - 150}>
       <Layer>
         {this.state.array.map((unit, index) => (
           <Line className="unit"
           key={index}
           x={160}
           y={80}
-          points={[15 * index, unit.p[1], 15 * index, 0]}
+          points={[15 * index, unit.p[1] + 50, 15 * index, 0]}
           stroke={unit.color}
           strokeWidth={12}
           shadowBlur={5}
