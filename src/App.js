@@ -13,7 +13,8 @@ class App extends React.Component {
       var height = Math.floor((Math.random() * 300) + 10);
       list[i] = {
         p : [i, height, i, 0],
-        color : "blue"
+        color : "blue",
+        nnn : 'gas'
       };
     }
     this.state = {
